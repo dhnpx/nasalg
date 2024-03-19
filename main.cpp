@@ -176,6 +176,70 @@ vector<int> getPos(int sensors[]) {
       pos[0] = 28;
       pos[1] = 28;
       break;
+    case 0b0000000000000001:
+      pos[0] = 6;
+      pos[1] = 6;
+      break;
+    case 0b0000000000000010:
+      pos[0] = 6;
+      pos[1] = 9;
+      break;
+    case 0b0000000000000100:
+      pos[0] = 6;
+      pos[0] = 21;
+      break;
+    case 0b0000000000001000:
+      pos[0] = 6;
+      pos[1] = 24;
+      break;
+    case 0b0000000000010000:
+      pos[0] = 9;
+      pos[1] = 6;
+      break;
+    case 0b0000000000100000:
+      pos[0] = 8;
+      pos[1] = 15;
+      break;
+    case 0b0000000001000000:
+      pos[0] = 9;
+      pos[1] = 24;
+      break;
+    case 0b0000000010000000:
+      pos[0] = 21;
+      pos[0] = 6;
+      break;
+    case 0b0000000100000000:
+      pos[0] = 18;
+      pos[1] = 9;
+      break;
+    case 0b0000001000000000:
+      pos[0] = 18;
+      pos[1] = 21;
+      break;
+    case 0b0000010000000000:
+      pos[0] = 21;
+      pos[0] = 24;
+      break;
+    case 0b0000100000000000:
+      pos[0] = 24;
+      pos[1] = 6;
+      break;
+    case 0b0001000000000000:
+      pos[0] = 24;
+      pos[0] = 9;
+      break;
+    case 0b0010000000000000:
+      pos[0] = 24;
+      pos[0] = 21;
+      break;
+    case 0b0100000000000000:
+      pos[0] = 24;
+      pos[0] = 24;
+      break;
+    default:
+      pos[0] = -1;
+      pos[1] = -1;
+      break;
   };
 
   return pos;
