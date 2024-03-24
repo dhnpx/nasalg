@@ -3,7 +3,7 @@
 
 using namespace std;
 
-vector<int> getPos15Sensors(int sensors[]) {
+vvector<int> getPos15Sensors(int sensors[]) {
   unsigned int zone = 0;
 
   for (int i = 0; i < 15; i++) {
@@ -232,6 +232,247 @@ vector<int> getPos15Sensors(int sensors[]) {
       pos[0] = 21;
       break;
     case 0b0100000000000000:
+      pos[0] = 24;
+      pos[0] = 24;
+      break;
+    default:
+      pos[0] = -1;
+      pos[1] = -1;
+      break;
+  };
+
+  return pos;
+}
+
+int* getPos15Sensors2(int sensors[]) {
+  unsigned int zone = 0;
+
+  for (int i = 0; i < 15; i++) {
+    if (i == 0 && sensors[i] != 0) {
+      zone += 1;
+    } else if (sensors[i] != 0) {
+      zone += (1 << i);
+    }
+  }
+  
+  static int  pos[2];
+
+  switch (zone) {
+    case 0b0000000010010000://
+      pos[0] = 1;
+      pos[1] = 8;
+      break;
+    case 0b0000000011010000://
+      pos[0] = 3;
+      pos[1] = 3;
+      break;
+    case 0b0000000011000000://
+      pos[0] = 8;
+      pos[1] = 1;
+      break;
+    case 0b0000000011000100://
+      pos[0] = 13;
+      pos[1] = 3;
+      break;
+    case 0b0000000011010100://
+      pos[0] = 11;
+      pos[1] = 6;
+      break;
+    case 0b0000000011110000://
+      pos[0] = 8;
+      pos[1] = 8;
+      break;
+    case 0b0000000010110000://
+      pos[0] = 3;
+      pos[1] = 13;
+      break;
+    case 0b0000000000110000://
+      pos[0] = 8;
+      pos[1] = 15;
+      break;
+    case 0b0000000001110000://
+      pos[0] = 13;
+      pos[1] = 13;
+      break;
+    case 0b0000000001010100://
+      pos[0] = 14;
+      pos[1] = 11;
+      break;
+    case 0b0000000001000100://
+      pos[0] = 15;
+      pos[1] = 8;
+      break;
+    case 0b0000100001000000://
+      pos[0] = 8;
+      pos[1] = 16;
+      break;
+    case 0b0000010100100000://
+      pos[0] = 3;
+      pos[1] = 18;
+      break;
+    case 0b0000011000100000://
+      pos[0] = 13;
+      pos[1] = 18;
+      break;
+    case 0b0000010100000000://
+      pos[0] = 1;
+      pos[1] = 23;
+      break;
+    case 0b0000011100100000://
+      pos[0] = 8;
+      pos[1] = 23;
+      break;
+    case 0b0000111000000000://
+      pos[0] = 14;
+      pos[1] = 20;
+      break;
+    case 0b0000111100000000://
+      pos[0] = 11;
+      pos[1] = 25;
+      break;
+    case 0b0000011100000000://
+      pos[0] = 3;
+      pos[1] = 28;
+      break;
+    case 0b0000101000000000://
+      pos[0] = 15;
+      pos[1] = 23;
+      break;
+    case 0b0000001100000000://
+      pos[0] = 8;
+      pos[1] = 30;
+      break;
+    case 0b0000101100000000://
+      pos[0] = 13;
+      pos[1] = 28;
+      break;
+    case 0b0000000000000111://
+      pos[0] = 18;
+      pos[1] = 3;
+    case 0b0000000000000011://
+      pos[0] = 23;
+      pos[1] = 1;
+      break;
+    case 0b0000000000001011://
+      pos[0] = 28;
+      pos[1] = 3;
+      break;
+    case 0b0000000000000110://
+      pos[0] = 16;
+      pos[1] = 8;
+      break;
+    case 0b0000000000001111://
+      pos[0] = 23;
+      pos[1] = 8;
+      break;
+    case 0b0001100000001001://
+      pos[0] = 30;
+      pos[1] = 8;
+      break;
+    case 0b0000000000001110://
+      pos[0] = 18;
+      pos[1] = 13;
+      break;
+    case 0b0000000000001100://
+      pos[0] = 23;
+      pos[1] = 15;
+      break;
+    case 0b0000000000001101://
+      pos[0] = 28;
+      pos[1] = 13;
+      break;
+    case 0b0101100000000000://
+      pos[0] = 18;
+      pos[1] = 18;
+      break;
+    case 0b0001100000000000://
+      pos[0] = 23;
+      pos[1] = 16;
+      break;
+    case 0b0011100000000000://
+      pos[0] = 28;
+      pos[1] = 18;
+      break;
+    case 0b0100100000000000://
+      pos[0] = 16;
+      pos[1] = 23;
+      break;
+    case 0b0111100000000000://
+      pos[0] = 23;
+      pos[1] = 23;
+      break;
+    case 0b0110100000000000://
+      pos[0] = 18;
+      pos[1] = 28;
+      break;
+    case 0b0110000000000000://
+      pos[0] = 23;
+      pos[1] = 30;
+    case 0b0011000000000000://
+      pos[0] =30;
+      pos[1] = 23;
+      break;
+    case 0b0111010000000000://
+      pos[0] = 28;
+      pos[1] = 28;
+      break;
+    case 0b0000000010000000://
+      pos[0] = 6;
+      pos[1] = 6;
+      break;
+    case 0b0000000000010000://
+      pos[0] = 6;
+      pos[1] = 9;
+      break;
+    case 0b0000010000000000://
+      pos[0] = 6;
+      pos[0] = 21;
+      break;
+    case 0b0000000100000000://
+      pos[0] = 6;
+      pos[1] = 24;
+      break;
+    case 0b0000000001000000://
+      pos[0] = 9;
+      pos[1] = 6;
+      break;
+    case 0b0000000000100000://
+      pos[0] = 8;
+      pos[1] = 15;
+      break;
+    case 0b0000001000000000://
+      pos[0] = 9;
+      pos[1] = 24;
+      break;
+    case 0b0000000000000010://
+      pos[0] = 21;
+      pos[0] = 6;
+      break;
+    case 0b0000000000000100://
+      pos[0] = 18;
+      pos[1] = 9;
+      break;
+    case 0b0000100000000000://
+      pos[0] = 18;
+      pos[1] =  21;
+      break;
+    case 0b0100000000000000://
+      pos[0] = 21;
+      pos[0] = 24;
+      break;
+    case 0b0000000000000001://
+      pos[0] = 24;
+      pos[1] = 6;
+      break;
+    case 0b0000000000001000://
+      pos[0] = 24;
+      pos[0] = 9;
+      break;
+    case 0b0001000000000000://
+      pos[0] = 24;
+      pos[0] = 21;
+      break;
+    case 0b0010000000000000://
       pos[0] = 24;
       pos[0] = 24;
       break;
